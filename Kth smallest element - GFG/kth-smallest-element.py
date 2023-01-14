@@ -9,12 +9,10 @@ class Solution:
         r : ending index of the array i.e size-1
         k : find kth smallest element and return using this function
         '''
-        hq = []
-        for i in range(l, r+1):
-            heapq.heappush(hq, arr[i])
+        heapq.heapify(arr)
         ans = -1
         while k>0:
-            ans = heapq.heappop(hq)
+            ans = heapq.heappop(arr)
             k -= 1
         return ans
 
